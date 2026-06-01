@@ -729,6 +729,10 @@ section {
   color: var(--muted);
   font-family: var(--font-mono);
   letter-spacing: 0.05em;
+  text-transform: lowercase;
+}
+.form-group label::before {
+  content: "// ";
 }
 .form-group input,
 .form-group textarea {
