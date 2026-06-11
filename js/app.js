@@ -38,9 +38,19 @@ const PROJECTS = [
     icon:   'fas fa-chart-line',
     bg:     'linear-gradient(135deg, #0d2a1a, #1a2a0d)',
     tags:   ['Solana', 'Memecoins', 'AI', 'Dashboard'],
-    cat:    'web3',
+    cat:    'startup',
     github: null,
-    live:   null
+    live:   'https://alphadegen.onrender.com/'
+  },
+  {
+    title:  'Examly JAMB AI',
+    desc:   'AI-powered JAMB practice platform for Nigerian university aspirants — adaptive question sets, instant explanations, and progress tracking to prep for the UTME smarter.',
+    icon:   'fas fa-graduation-cap',
+    bg:     'linear-gradient(135deg, #1a0d3a, #0d1a40)',
+    tags:   ['AI', 'EdTech', 'JAMB', 'Startup'],
+    cat:    'startup',
+    github: null,
+    live:   'https://examly-jamb-ai.up.railway.app/'
   },
   {
     title:  'Zenon Coffee Shop',
