@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background: #080810;
+  color: #eeeef8;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background:
+    radial-gradient(1200px 800px at 20% -10%, rgba(100,80,255,0.15), transparent 60%),
+    radial-gradient(900px 600px at 110% 30%, rgba(0,229,200,0.10), transparent 60%),
+    radial-gradient(800px 600px at 50% 110%, rgba(255,77,141,0.10), transparent 60%),
+    #080810;
+}
+
+/* ── SVG fractal noise overlay (ported from v1 css/style.css:51-59) ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' /></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/></svg>");
+}
+
+/* ── CRT scan line single horizontal sweep ── */
+.scanline {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 2px,
+      rgba(255,255,255,0.02) 3px,
+      transparent 4px
+    );
+  mix-blend-mode: overlay;
+}
+.scanline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 6vh;
+  background: linear-gradient(to bottom, transparent, rgba(156,125,255,0.06), transparent);
+  animation: scan 6s linear infinite;
+}
+
+/* ── Selection ── */
+::selection { background: rgba(100,80,255,0.45); color: #fff; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #0e0e1c; }
+::-webkit-scrollbar-thumb { background: linear-gradient(#6450ff, #00e5c8); border-radius: 10px; }
+
+/* ── Reusable bits ── */
+@layer components {
+  .terminal-panel {
+    @apply relative rounded-xl border border-purple/20 bg-bg2/70 backdrop-blur-md shadow-panel;
+  }
+  .terminal-chrome {
+    @apply flex items-center gap-2 px-4 py-2 border-b border-purple/15 font-mono text-xs text-muted;
+  }
+  .chrome-dot { @apply w-2.5 h-2.5 rounded-full; }
+  .prompt-line {
+    @apply font-mono text-sm text-purple2;
+  }
+  .term-btn {
+    @apply font-mono text-sm tracking-tight px-3 py-2 rounded-md border border-purple/30 bg-bg3/60 text-text hover:bg-purple/15 hover:border-purple/60 transition;
+  }
+  .term-btn-primary {
+    @apply font-mono text-sm tracking-tight px-3 py-2 rounded-md text-bg bg-gradient-to-r from-cyan to-purple2 hover:opacity-90 transition shadow-glow-cyan;
+  }
+  .tag-chip {
+    @apply font-mono text-[0.7rem] px-2 py-0.5 rounded-md border border-purple/25 text-purple2 bg-purple/5;
+  }
+}
+
+/* honeypot stays out of layout/visibility for humans */
+.hp-field {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
+
+/* keep canvases behind everything */
+.bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* sweep highlight on skill bars */
+.skill-fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  animation: sweep 2.4s ease-in-out infinite;
+}
