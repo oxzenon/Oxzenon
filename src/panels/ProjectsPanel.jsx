@@ -26,7 +26,7 @@ function ProjectCard({ project }) {
         className="relative flex items-center justify-center h-36"
         style={{ background: project.bg }}
       >
-        <Glyph name={project.glyph} className="text-5xl text-text drop-shadow" />
+        <Glyph name={project.glyph} className="text-3xl xs:text-4xl sm:text-5xl text-text drop-shadow" />
         <div
           className="pointer-events-none absolute inset-0 opacity-0 hover:opacity-100 transition"
           style={{

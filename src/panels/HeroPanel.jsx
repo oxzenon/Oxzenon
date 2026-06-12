@@ -2,7 +2,6 @@ import { Panel } from './Panel.jsx';
 import { PromptLine } from '../ui/PromptLine.jsx';
 import { Typewriter } from '../ui/Typewriter.jsx';
 import { Glyph } from '../ui/Glyph.jsx';
-import { BootHero3D } from '../three/BootHero3D.jsx';
 import { useSolPrice } from '../hooks/useSolPrice.js';
 
 export function HeroPanel() {
@@ -22,12 +21,12 @@ export function HeroPanel() {
             <Typewriter
               text="Babalola Ifeoluwa"
               speed={30}
-              className="block font-display text-4xl sm:text-6xl tracking-tight text-text"
+              className="block font-display text-2xl xs:text-3xl sm:text-5xl lg:text-6xl tracking-tight text-text"
             />
             <Typewriter
               text="aka Oxzenon"
               speed={26}
-              className="block font-mono text-purple2 text-sm sm:text-base"
+              className="block font-mono text-purple2 text-xs xs:text-sm sm:text-base"
             />
           </div>
 
@@ -41,7 +40,7 @@ export function HeroPanel() {
 
           <p className="text-muted max-w-xl leading-relaxed">
             I build for the open web — crafting clean, responsive interfaces
-            with HTML, CSS, and JavaScript. Currently diving into Solidity and
+            with HTML, CSS, JavaScript and React. Currently diving into Solidity and
             Solana to bring that work on-chain.
           </p>
 
@@ -77,7 +76,7 @@ export function HeroPanel() {
         </div>
 
         <div>
-          <BootHero3D />
+          <img src="/oxzenon.jpg" alt="Oxzenon" className="w-full rounded-lg" />
         </div>
       </div>
     </Panel>

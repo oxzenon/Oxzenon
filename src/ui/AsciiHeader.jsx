@@ -10,7 +10,7 @@ export function AsciiHeader({ tag, title, kicker }) {
       <div className="font-mono text-xs text-cyan tracking-[0.3em]">
         ╭── // {tag.toUpperCase()} ──╮
       </div>
-      <h2 className="font-display text-3xl md:text-5xl leading-tight tracking-tight text-text">
+      <h2 className="font-display text-xl xs:text-2xl sm:text-3xl md:text-5xl leading-tight tracking-tight text-text">
         {title}
       </h2>
       {kicker && (

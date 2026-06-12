@@ -28,7 +28,7 @@ export function StatsPanel() {
             <div className="flex items-center gap-2 font-mono text-xs text-muted">
               <Glyph name="fas fa-bolt" className="text-cyan" /> SOL_PRICE
             </div>
-            <div className="font-mono text-4xl text-text">{big}</div>
+            <div className="font-mono text-2xl xs:text-3xl sm:text-4xl text-text">{big}</div>
             <div className={`font-mono text-sm ${changeColor}`}>{change}</div>
           </div>
 
@@ -36,7 +36,7 @@ export function StatsPanel() {
             <div className="flex items-center gap-2 font-mono text-xs text-muted">
               <Glyph name="fas fa-globe" className="text-purple2" /> NETWORK
             </div>
-            <div className="font-mono text-2xl text-text">Solana</div>
+            <div className="font-mono text-lg xs:text-xl sm:text-2xl text-text">Solana</div>
             <div className="font-mono text-sm text-muted">Mainnet Beta</div>
           </div>
         </div>

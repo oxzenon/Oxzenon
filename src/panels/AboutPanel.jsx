@@ -5,6 +5,7 @@ import { useSkillBar } from '../hooks/useSkillBar.js';
 const SKILLS = [
   { label: 'HTML / CSS',         pct: 80 },
   { label: 'JavaScript',         pct: 70 },
+  { label: 'React',              pct: 50 },
   { label: 'Responsive Design',  pct: 75 },
   { label: 'Solidity',           pct: 30 },
   { label: 'Web3 Concepts',      pct: 60 },
