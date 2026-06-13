@@ -66,6 +66,17 @@ export const PROJECTS = [
     repo:   null,
     live:   'https://zenonshop.netlify.app/',
   },
+  {
+    title:  'FlowStack — SaaS Landing',
+    blurb:  'A SaaS product landing page built to practice modern marketing layouts — hero, feature blocks, and a responsive single-page flow you can ship straight to Vercel.',
+    glyph:  'fas fa-layer-group',
+    chrome: 'flowstack.jsx',
+    bg:     'linear-gradient(135deg, #0d1a40, #1a0d2a)',
+    stack:  ['React', 'Tailwind', 'Landing', 'SaaS'],
+    bucket: 'practice',
+    repo:   null,
+    live:   'https://flowstack-saas-practice-landing.vercel.app/',
+  },
 ];
 
 export const BUCKETS = [
